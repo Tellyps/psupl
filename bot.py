@@ -8,10 +8,10 @@ import requests
 from bs4 import BeautifulSoup
 import re
 
-API_ID = environ.get('API_ID', '')
-API_HASH = environ.get('API_HASH', '')
-BOT_TOKEN = environ.get('BOT_TOKEN','')
-PDISK_API_KEY = environ.get('PDISK_API_KEY','')
+API_ID = environ.get('API_ID', '2238786')
+API_HASH = environ.get('API_HASH', 'e449d6cc630583d0b415b286eedb9192')
+BOT_TOKEN = environ.get('BOT_TOKEN','6057066316:AAF4oyCEzJDwzgz0ZYn1eUgL7EJ45p5Xpkg')
+PDISK_API_KEY = environ.get('PDISK_API_KEY','https://pdisk.pro/api/account/info?key=6937x9v1qat1dj4bpon')
 CHANNEL = environ.get('CHANNEL', 'Umlinks')
 THUMB_URL = environ.get('THUMB_URL', '')
 
