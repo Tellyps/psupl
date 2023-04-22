@@ -8,12 +8,12 @@ import requests
 from bs4 import BeautifulSoup
 import re
 
-API_ID = environ.get('API_ID', '1976680')
-API_HASH = environ.get('API_HASH', '9073255ce64a6072a59099803493f97d')
-BOT_TOKEN = environ.get('BOT_TOKEN','2017834374:AAHq2Yi6ZbAYTTm4m_AhuEnqY3SDdCqShsA')
-PDISK_API_KEY = environ.get('PDISK_API_KEY','a8b73fd872cca41084f05f8da2ecfcc1')
+API_ID = environ.get('API_ID', '')
+API_HASH = environ.get('API_HASH', '')
+BOT_TOKEN = environ.get('BOT_TOKEN','')
+PDISK_API_KEY = environ.get('PDISK_API_KEY','')
 CHANNEL = environ.get('CHANNEL', 'Umlinks')
-THUMB_URL = environ.get('THUMB_URL', 'https://telegra.ph/file/f8786ee32888df6c21ce5.jpg')
+THUMB_URL = environ.get('THUMB_URL', '')
 
 bot = Client('pdisk bot',
              api_id=API_ID,
@@ -27,7 +27,7 @@ bot = Client('pdisk bot',
 async def start(bot, message):
     await message.reply(
         f"**Hi Buddy ! I Think Your Name Is {message.chat.first_name}!**\n\n"
-        "**I Am Simple PDisk Uploader Bot.\n\n➠ Send Me Any Direct Link, YouTube Link Or Video Link  I Will Upload To PDisk And Give Direct Link\n\nMade With❤BY @umlinks**")
+        "**I Am Simple PDisk Uploader Bot.\n\n➠ Send Me Any Direct Link, YouTube Link Or Video Link  I Will Upload To PDisk And Give Direct Link\n\nMade With❤BY @PS_BOTZ**")
 
     
 @bot.on_message(filters.text & filters.private)
@@ -78,7 +78,7 @@ async def get_ptitle(url):
     v_len = len(v_id)
     v_id = v_id[1:v_len - 2]
 
-    v_url = 'https://www.pdisks.com/share-video?videoid=' + v_id
+    v_url = 'https://www.pdisk.pro/share-video?videoid=' + v_id
     res = [str, v_url]
     return res
 
@@ -98,7 +98,7 @@ async def pdisk_up(link):
     data = dict(data)
     print(data)
     v_id = data['data']['item_id']
-    v_url = 'https://www.pdisks.com/share-video?videoid=' + v_id
+    v_url = 'https://www.pdisk.pro/share-video?videoid=' + v_id
     return (v_url)
 
 
@@ -150,7 +150,7 @@ async def addFooter(str):
 <b> Note : Your Video File is Available on Above LINK ones Upload Process is Complete, it Take Time Depend on Your File Size & My Server Upload Speed
 So,be Patient </b>  😴😴😴😴     
 ━━━━━━━━━━━━━━━
-⦿ Made With♥️BY @groupdc
+⦿ Made With♥️BY @PS_BOTZ
 ━━━━━━━━━━━━━━━
 ✪ »JOIN CHANNEL ➡️ @""" + CHANNEL
     return str + footer
