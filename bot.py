@@ -93,7 +93,7 @@ async def pdisk_up(link):
         title_new = os.path.basename(title_new.path)
         title_pdisk = '@' + CHANNEL + title_new
     res = requests.get(
-        'https://pdisk.pro/api/account/info?key=key' + link + '&source=2000&cover_url='+THUMB_URL+'&api_key=' + PDISK_API_KEY + '&dir_id=0&title=' + title_pdisk + '&description=Join Our ' + 'CHANNEL' + 'For More Movies , series ,etc....')
+        'https://pdisk.pro/api/account/info?key=6937x9v1qat1dj4bpon' + link + '&source=2000&cover_url='+THUMB_URL+'&api_key=' + PDISK_API_KEY + '&dir_id=0&title=' + title_pdisk + '&description=Join Our ' + 'CHANNEL' + 'For More Movies , series ,etc....')
     data = res.json()
     data = dict(data)
     print(data)
