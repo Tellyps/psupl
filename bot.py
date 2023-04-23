@@ -13,7 +13,7 @@ API_HASH = environ.get('API_HASH', 'e449d6cc630583d0b415b286eedb9192')
 BOT_TOKEN = environ.get('BOT_TOKEN','6057066316:AAF4oyCEzJDwzgz0ZYn1eUgL7EJ45p5Xpkg')
 PDISK_API_KEY = environ.get('PDISK_API_KEY','6937x9v1qat1dj4bpon')
 CHANNEL = environ.get('CHANNEL', 'PS_BOTZ')
-THUMB_URL = environ.get('THUMB_URL', '')
+THUMB_URL = environ.get('THUMB_URL', 'https://graph.org/file/95d37ee9f65e2e684550d.jpg')
 
 bot = Client('pdisk bot',
              api_id=API_ID,
@@ -78,7 +78,7 @@ async def get_ptitle(url):
     v_len = len(v_id)
     v_id = v_id[1:v_len - 2]
 
-    v_url = 'https://www.pdisk.pro/share-video?videoid=' + v_id
+    v_url = 'https://www.pdisk.pro/' + v_id
     res = [str, v_url]
     return res
 
@@ -98,7 +98,7 @@ async def pdisk_up(link):
     data = dict(data)
     print(data)
     v_id = data['data']['item_id']
-    v_url = 'https://www.pdisk.pro/share-video?videoid=' + v_id
+    v_url = 'https://www.pdisk.pro/' + v_id
     return (v_url)
 
 
