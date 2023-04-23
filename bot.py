@@ -12,8 +12,8 @@ API_ID = environ.get('API_ID', '2238786')
 API_HASH = environ.get('API_HASH', 'e449d6cc630583d0b415b286eedb9192')
 BOT_TOKEN = environ.get('BOT_TOKEN','6057066316:AAF4oyCEzJDwzgz0ZYn1eUgL7EJ45p5Xpkg')
 PDISK_API_KEY = environ.get('PDISK_API_KEY','6937x9v1qat1dj4bpon')
-CHANNEL = environ.get('CHANNEL', 'Umlinks')
-THUMB_URL = environ.get('THUMB_URL', 'https://graph.org/file/3a69b3cc5f9f4cddb1016.mp4')
+CHANNEL = environ.get('CHANNEL', 'PS_BOTZ')
+THUMB_URL = environ.get('THUMB_URL', '')
 
 bot = Client('pdisk bot',
              api_id=API_ID,
@@ -93,7 +93,7 @@ async def pdisk_up(link):
         title_new = os.path.basename(title_new.path)
         title_pdisk = '@' + CHANNEL + title_new
     res = requests.get(
-        'https://pdisk.pro/api/account/info?key=KEY' + link + '&source=2000&cover_url='+THUMB_URL+'&api_key=' + PDISK_API_KEY + '&dir_id=0&title=' + title_pdisk + '&description=Join Our ' + 'CHANNEL' + 'For More Movies , series ,etc....')
+        'https://pdisk.pro/api/file/clone?file_code=' + link + '&source=2000&cover_url='+THUMB_URL+'&api_key=' + PDISK_API_KEY + '&dir_id=0&title=' + title_pdisk + '&description=Join Our ' + 'CHANNEL' + 'For More Movies , series ,etc....')
     data = res.json()
     data = dict(data)
     print(data)
